@@ -21,7 +21,12 @@ MAX_PERMANENT_MEMBERS = 5
 # ══════════════════════════════════════════
 #           KẾT NỐI DATABASE / DATABASE
 # ══════════════════════════════════════════
-mongo_client  = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL, serverSelectionTimeoutMS=5000)
+mongo_client = motor.motor_asyncio.AsyncIOMotorClient(
+    MONGO_URL,
+    serverSelectionTimeoutMS=5000,
+    tls=True,
+    tlsAllowInvalidCertificates=True
+)
 db            = mongo_client["WorldRP_2000"]
 resolutions_col = db["UN_Resolutions"]
 sanctions_col   = db["UN_Sanctions"]
