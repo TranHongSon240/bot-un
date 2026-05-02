@@ -1,0 +1,5 @@
+discord.py
+motor
+flask
+pymongo
+pytz
